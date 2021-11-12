@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Deshboard = () => {
+const MyOrders = () => {
     return (
         <div>
-            <h1>Dehsboo</h1>
+            <h2>MyOrders</h2>
         </div>
     );
 };
 
-export default Deshboard;
+export default MyOrders;

@@ -36,7 +36,7 @@ const Header = () => {
             <Nav>
                 <NavLink activeStyle={activeStyle} className="me-3 mt-0 mt-lg-2" to='/explore'>Explore</NavLink>
                 {
-                    user.email && <NavLink activeStyle={activeStyle} className="me-3 mt-2" to='/deshboard'>Deshboard</NavLink>
+                    user.email && <NavLink activeStyle={activeStyle} className="me-3 mt-2" to='/dashboard'>Dashboard</NavLink>
                 }
                 {
                     user.email ? <Button onClick={logOut} variant="light rounded-0 text-dark"><i className="fas fa-sign-in-alt"></i> Signout</Button>

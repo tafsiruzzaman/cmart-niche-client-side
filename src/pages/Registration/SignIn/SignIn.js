@@ -106,6 +106,7 @@ const SignIn = () => {
         registerNewUser(email, password)
         .then((result) => {
             setUser(result.user);
+            saveUser(email, name, 'POST');
             history.push(redirect_uri);
             setUserName(name);
         })
@@ -113,13 +114,14 @@ const SignIn = () => {
             setError(error.message)
         })
         .finally(() => setIsLoading(false));
-                setPasswordMatched(false);
+        setPasswordMatched(false);
     };
     const handleGoogleSignIn = () => {
         singInUsingGoogle()
         .then(result => {
             history.push(redirect_uri);
             setUser(result.user);
+            saveUser(result?.user?.email, result?.user?.displayName, 'PUT');
         })
         .catch(error => {
             setError(error.message);
@@ -133,6 +135,7 @@ const SignIn = () => {
         .then(result => {
             history.push(redirect_uri);
             setUser(result.user);
+            saveUser(result?.user?.email, result?.user?.displayName, 'PUT');
         })
         .catch(error => {
             setError(error.message);
@@ -141,6 +144,18 @@ const SignIn = () => {
             setIsLoading(false);
         });
     };
+
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then()
+    }
     return (
         <div>
             <Header></Header>

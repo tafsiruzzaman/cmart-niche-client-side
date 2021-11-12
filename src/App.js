@@ -5,7 +5,7 @@ import AuthProvider from './contexts/AuthProvider';
 import RegistrationRoute from './PrivateRoutes/RegistrationRoute/RegistrationRoute';
 import SignIn from './pages/Registration/SignIn/SignIn';
 import GeneralRoute from './PrivateRoutes/GeneralRoute/GeneralRoute';
-import Deshboard from './pages/Deshboard/Deshboard/Deshboard';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Explore from './pages/Explore/Explore';
@@ -36,8 +36,8 @@ function App() {
           <GeneralRoute path="/ordercar/:id">
             <OrderCar></OrderCar>
           </GeneralRoute>
-          <GeneralRoute path="/deshboard">
-            <Deshboard></Deshboard>
+          <GeneralRoute path="/dashboard">
+            <Dashboard></Dashboard>
           </GeneralRoute>
           <RegistrationRoute path="/signin">
             <SignIn></SignIn>
