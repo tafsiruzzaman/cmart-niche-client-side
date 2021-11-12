@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Lexus GS F",
+        "img": "https://storage.googleapis.com/theme-vessel-items/checking-sites/cmart-2-html/HTML/main/img/car/car-3.jpg",
+        "location": "123 Kathal St. Tampa City",
+        "mileage": "4000",
+        "mode": "Manual",
+        "manufacturerYear": 2021,
+        "fuelType": "Petrol",
+        "ratting": 4.7,
+        "review": 350,
+        "price": 8.5,
+        "type": "Sports",
+        "colour": "White",
+        "description": "A Lexus GS 350 will depreciate 40% after 5 years and have a 5 year resale value of $32,592. The chart below shows the expected depreciation for the next 10 years. These results are for vehicles in good condition, averaging 12,000 miles per year. It also assumes a selling price of $54,393 when new. Enter your purchase price, expected ownership period and estimated miles driven annually."
+    },
+    {
+        "name": "Toyota Prius specs",
+        "img": "https://storage.googleapis.com/theme-vessel-items/checking-sites/cmart-2-html/HTML/main/img/car/car-4.jpg",
+        "location": "123 Kathal St. Tampa City",
+        "mileage": "4350",
+        "mode": "Auto",
+        "manufacturerYear": 2019,
+        "fuelType": "Petrol",
+        "ratting": 4.3,
+        "review": 250,
+        "price": 8,
+        "type": "Sedan",
+        "colour": "Red",
+        "description": "The 2022 Toyota Prius delivers phenomenal fuel economy and offers up a lot of passenger and cargo space, but it falls to the bottom half of the hybrid and electric car class because of a weak powertrain and so-so interior quality."
+    },
+    {
+        "name": "Audi Q7 2018",
+        "img": "https://storage.googleapis.com/theme-vessel-items/checking-sites/cmart-2-html/HTML/main/img/car/car-6.jpg",
+        "location": "123 Kathal St. Tampa City",
+        "mileage": "3500",
+        "mode": "Manual",
+        "manufacturerYear": 2018,
+        "fuelType": "Petrol",
+        "ratting": 3.7,
+        "review": 300,
+        "price": 10,
+        "type": "Sedan",
+        "colour": "Blue",
+        "description": "Slotting above the compact Q5, the 2018 Audi Q7 is a three-row crossover with seating for seven passengers and standard all-wheel drive. Two engines are available on the 2018 Q7 including a 2.0-liter turbo-four rated at 252 hp and 273 lb-ft of torque and a 3.0-liter supercharged V-6 with 333 hp and 325 lb-ft."
+    }
+]

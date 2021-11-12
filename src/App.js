@@ -9,6 +9,8 @@ import Deshboard from './pages/Deshboard/Deshboard/Deshboard';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Explore from './pages/Explore/Explore';
+import NotFound from './pages/NotFound/NotFound';
+import OrderCar from './pages/OrderCar/OrderCar';
 
 function App() {
   return (
@@ -31,12 +33,18 @@ function App() {
           <Route path="/explore">
             <Explore></Explore>
           </Route>
+          <GeneralRoute path="/ordercar/:id">
+            <OrderCar></OrderCar>
+          </GeneralRoute>
           <GeneralRoute path="/deshboard">
             <Deshboard></Deshboard>
           </GeneralRoute>
-          <RegistrationRoute>
+          <RegistrationRoute path="/signin">
             <SignIn></SignIn>
           </RegistrationRoute>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
         </Switch>
       </BrowserRouter>
       </AuthProvider>
