@@ -6,7 +6,7 @@ import Header from '../Shraed/Header/Header';
 const Explore = () => {
     const [cars, setCars] = useState([]);
     useEffect( () => {
-        fetch('http://localhost:5000/all-cars')
+        fetch('https://thawing-sea-96510.herokuapp.com/all-cars')
         .then(res => res.json())
         .then(data => setCars(data))
     }, [])

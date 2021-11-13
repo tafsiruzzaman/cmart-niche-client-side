@@ -25,6 +25,7 @@ import AddAProduct from '../AddAProduct/AddAProduct/AddAProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import AdminRoute from '../../../PrivateRoutes/AdminRoute/AdminRoute';
 
 const drawerWidth = 230;
 
@@ -159,32 +160,39 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Switch>
-          <Route exact path={path}>
-            <MyOrders></MyOrders>
-          </Route>
-          <Route path={`${path}/my-bookings`}>
-            <MyOrders></MyOrders>
-          </Route>
-          <Route path={`${path}/review`}>
-            <Review></Review>
-          </Route>
-          <Route path={`${path}/pay`}>
-            <Pay></Pay>
-          </Route>
-          <Route path={`${path}/add-a-product`}>
-            <AddAProduct></AddAProduct>
-          </Route>
-          <Route path={`${path}/make-admin`}>
-            <MakeAdmin></MakeAdmin>
-          </Route>
-          <Route path={`${path}/manage-all-orders`}>
-            <ManageAllOrders></ManageAllOrders>
-          </Route>
-          <Route path={`${path}/manage-products`}>
-            <ManageProducts></ManageProducts>
-          </Route>
-        </Switch>
+          <Switch>
+            {
+              admin ? 
+              <AdminRoute exact path={path}>
+                <ManageProducts></ManageProducts>
+              </AdminRoute>
+              :
+              <Route exact path={`${path}`}>
+                <MyOrders></MyOrders>
+              </Route>
+            }
+            <AdminRoute path={`${path}/manage-products`}>
+              <ManageProducts></ManageProducts>
+            </AdminRoute>
+            <AdminRoute path={`${path}/add-a-product`}>
+              <AddAProduct></AddAProduct>
+            </AdminRoute>
+            <AdminRoute path={`${path}/make-admin`}>
+              <MakeAdmin></MakeAdmin>
+            </AdminRoute>
+            <AdminRoute path={`${path}/manage-all-orders`}>
+              <ManageAllOrders></ManageAllOrders>
+            </AdminRoute>
+            <Route path={`${path}/my-bookings`}>
+              <MyOrders></MyOrders>
+            </Route>
+            <Route path={`${path}/review`}>
+              <Review></Review>
+            </Route>
+            <Route path={`${path}/pay`}>
+              <Pay></Pay>
+            </Route>
+          </Switch>
       </Box>
     </Box>
   );

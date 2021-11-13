@@ -7,6 +7,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [adminLoading, setAdminLoading] = useState(true);
     const [admin, setAdmin] = useState(false);
 
 
@@ -61,9 +62,12 @@ const useFirebase = () => {
     }, [auth]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://thawing-sea-96510.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
-            .then(data => setAdmin(data.admin))
+            .then(data => {
+                setAdmin(data.admin)
+                setAdminLoading(false);
+            })
     }, [user.email])
 
     return {
@@ -72,6 +76,7 @@ const useFirebase = () => {
         error,
         setError,
         isLoading,
+        adminLoading,
         admin,
         setIsLoading,
         singInUsingGoogle,

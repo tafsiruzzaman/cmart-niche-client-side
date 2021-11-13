@@ -147,7 +147,7 @@ const SignIn = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://thawing-sea-96510.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

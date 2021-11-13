@@ -13,7 +13,7 @@ const OrderCar = () => {
     const {user} = useAuth();
     
     useEffect( ()=> {
-        fetch(`http://localhost:5000/all-cars/${id}`)
+        fetch(`https://thawing-sea-96510.herokuapp.com/all-cars/${id}`)
         .then(res => res.json())
         .then(data => setCar(data))
     }, [])
@@ -28,7 +28,7 @@ const OrderCar = () => {
         data.colour = car.colour;
         console.log(data)
         
-        fetch('http://localhost:5000/allBookings', {
+        fetch('https://thawing-sea-96510.herokuapp.com/allBookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -40,7 +40,7 @@ const OrderCar = () => {
             if (data.insertedId) {
                 reset();
                 swal("Good job!", "You booked the car successfully", "success");
-                // history.push('/myBookings')
+                history.push('/dashboard')
             }
         })
     };
