@@ -49,6 +49,11 @@ function Dashboard(props) {
       {
         !admin ? 
         <div className="text-start mt-4">
+          <Link to={`/`} className="text-decoration-none">
+            <Button className="ms-4" variant="text">
+              <i className="fs-5 text-danger fw-bolder fas fa-home me-4"></i> <small className="fw-bolder text-dark">Home</small>
+            </Button>
+          </Link>
           <Link to={`${url}/my-bookings`} className="text-decoration-none">
             <Button className="ms-4" variant="text">
               <i className="fs-5 text-danger fw-bolder fas fa-car me-4"></i> <small className="fw-bolder text-dark">My Bookings</small>
@@ -88,7 +93,7 @@ function Dashboard(props) {
             </Button>
           </Link>
         </div>
-      }     
+      }
       <Button onClick={logOut} variant="contained" style={{backgroundColor: "#dc3545", marginTop: "300px", borderRadius: 0}}>
         <i className="fas fa-sign-in-alt me-2"></i> Signout
       </Button>

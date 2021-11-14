@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Row, Spinner } from 'react-bootstrap';
 import Car from '../Shraed/Car/Car';
+import Footer from '../Shraed/Footer/Footer';
 import Header from '../Shraed/Header/Header';
 
 const Explore = () => {
@@ -13,7 +14,7 @@ const Explore = () => {
     return (
         <div>
             <Header></Header>
-            <div className="container">
+            <div className="container mb-5">
                 <h1 className="fw-bolder pt-5 pb-5">FIND YOUR DREAM <span className="text-danger">CAR</span></h1>
                 {
                     cars.length === 0 ?
@@ -35,6 +36,7 @@ const Explore = () => {
                     </Row>
                 }
             </div>
+            <Footer></Footer>
         </div>
     );
 };

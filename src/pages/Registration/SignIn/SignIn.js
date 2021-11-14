@@ -18,7 +18,7 @@ const SignIn = () => {
     const [isSignin, setIsSignin] = useState(false);
     const location = useLocation();
     const history = useHistory();
-    const redirect_uri = location.state?.from || '/home';
+    const redirect_uri = location.state?.from || '/dashboard';
 
     const handleIsSignin = () => {
         if(isSignin) {
@@ -121,6 +121,7 @@ const SignIn = () => {
         .then(result => {
             history.push(redirect_uri);
             setUser(result.user);
+            console.log(result.user)
             saveUser(result?.user?.email, result?.user?.displayName, 'PUT');
         })
         .catch(error => {

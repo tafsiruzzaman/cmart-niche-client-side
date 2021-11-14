@@ -28,8 +28,8 @@ const Review = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.rating = value;
-        data.name = user.name;
-        data.img = user.img;
+        data.name = user.displayName;
+        data.img = user.photoURL;
         fetch('https://thawing-sea-96510.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
@@ -42,9 +42,9 @@ const Review = () => {
             if (data.insertedId) {
                 reset();
                 swal("Good job!", "Thank U for your feedback!", "success");
+                setValue(3);
             }
         })
-        console.log(data)
     };
     return (
         <div className="container">
