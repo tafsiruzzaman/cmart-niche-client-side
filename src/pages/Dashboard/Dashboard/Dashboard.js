@@ -21,16 +21,18 @@ import MyOrders from '../MyOrders/MyOrders/MyOrders';
 import Review from '../Review/Review';
 import Pay from '../Pay/Pay';
 import useAuth from '../../../hooks/useAuth';
-import AddAProduct from '../AddAProduct/AddAProduct/AddAProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import AdminRoute from '../../../PrivateRoutes/AdminRoute/AdminRoute';
+import { Spinner } from 'react-bootstrap';
+import NotFound from '../../NotFound/NotFound';
+import AddAProduct from '../AddAProduct/AddAProduct';
 
 const drawerWidth = 230;
 
 function Dashboard(props) {
-  const {admin} = useAuth();
+  const { admin, adminLoading } = useAuth();
   const {logOut} = useAuth();
   const { window } = props;
   let { path, url } = useRouteMatch();
@@ -103,6 +105,10 @@ function Dashboard(props) {
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
+  if (adminLoading) {
+    return <Spinner animation="border" variant="warning" />
+  }
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -165,39 +171,53 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-          <Switch>
-            {
-              admin ? 
-              <AdminRoute exact path={path}>
+          {
+            admin? 
+            <Switch>
+              <Route exact path={`${path}`}>
+                <ManageProducts></ManageProducts>
+              </Route>
+              <AdminRoute path={`${path}/manage-products`}>
                 <ManageProducts></ManageProducts>
               </AdminRoute>
-              :
+              <AdminRoute path={`${path}/add-a-product`}>
+                <AddAProduct></AddAProduct>
+              </AdminRoute>
+              <AdminRoute path={`${path}/make-admin`}>
+                <MakeAdmin></MakeAdmin>
+              </AdminRoute>
+              <AdminRoute path={`${path}/manage-all-orders`}>
+                <ManageAllOrders></ManageAllOrders>
+              </AdminRoute>
+              <Route path={`${path}/my-bookings`}>
+                <MyOrders></MyOrders>
+              </Route>
+              <Route path={`${path}/review`}>
+                <Review></Review>
+              </Route>
+              <Route path={`${path}/pay`}>
+                <Pay></Pay>
+              </Route>
+            </Switch>
+          :
+            <Switch>
               <Route exact path={`${path}`}>
                 <MyOrders></MyOrders>
               </Route>
-            }
-            <AdminRoute path={`${path}/manage-products`}>
-              <ManageProducts></ManageProducts>
-            </AdminRoute>
-            <AdminRoute path={`${path}/add-a-product`}>
-              <AddAProduct></AddAProduct>
-            </AdminRoute>
-            <AdminRoute path={`${path}/make-admin`}>
-              <MakeAdmin></MakeAdmin>
-            </AdminRoute>
-            <AdminRoute path={`${path}/manage-all-orders`}>
-              <ManageAllOrders></ManageAllOrders>
-            </AdminRoute>
-            <Route path={`${path}/my-bookings`}>
-              <MyOrders></MyOrders>
-            </Route>
-            <Route path={`${path}/review`}>
-              <Review></Review>
-            </Route>
-            <Route path={`${path}/pay`}>
-              <Pay></Pay>
-            </Route>
-          </Switch>
+              <Route path={`${path}/my-bookings`}>
+                <MyOrders></MyOrders>
+              </Route>
+              <Route path={`${path}/review`}>
+                <Review></Review>
+              </Route>
+              <Route path={`${path}/pay`}>
+                <Pay></Pay>
+              </Route>
+              <Route path={`${path}/*`}>
+                <NotFound></NotFound>
+              </Route>
+            </Switch>
+          }
       </Box>
     </Box>
   );

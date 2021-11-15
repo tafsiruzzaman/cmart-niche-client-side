@@ -68,7 +68,7 @@ const useFirebase = () => {
                 setAdmin(data.admin)
                 setAdminLoading(false);
             })
-    }, [user.email])
+    }, [user])
 
     return {
         user,

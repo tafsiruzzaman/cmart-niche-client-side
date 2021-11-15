@@ -8,7 +8,6 @@ const AdminRoute = ({ children, ...rest }) => {
     if (isLoading && adminLoading) {
         return <Spinner animation="border" variant="warning" />
     }
-    // console.log(user.email, adminLoading, admin, isLoading)
     return (
         <Route
             {...rest}

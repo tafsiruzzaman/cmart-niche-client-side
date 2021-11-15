@@ -28,7 +28,7 @@ const OrderCar = () => {
         data.colour = car.colour;
         console.log(data)
         
-        fetch('https://thawing-sea-96510.herokuapp.com/allBookings', {
+        fetch('https://thawing-sea-96510.herokuapp.com/all-bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
