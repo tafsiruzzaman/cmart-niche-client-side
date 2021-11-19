@@ -7,12 +7,6 @@ const AddAProduct = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        if(data.review.length >=4) {
-            data.review = `${((parseFloat(data.review) / 1000)).toFixed(1)}+K`
-        }
-        else{
-            data.review = `${data.review} `
-        }
         fetch('https://thawing-sea-96510.herokuapp.com/all-cars', {
             method: 'POST',
             headers: {
@@ -111,7 +105,7 @@ const AddAProduct = () => {
                                 <Form.Control as="textarea" placeholder="Description" rows={10} {...register("description", { required: true })} />
                                 {errors.description && <span className="text-danger">required *</span>}
                             </Form.Group>
-                            <Button variant="warning text-white px-5 rounded-0" type="submit">
+                            <Button variant="danger text-white px-5 rounded-0" type="submit">
                                 Submit
                             </Button>
                         </div>

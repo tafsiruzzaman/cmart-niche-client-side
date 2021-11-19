@@ -28,6 +28,7 @@ import AdminRoute from '../../../PrivateRoutes/AdminRoute/AdminRoute';
 import { Spinner } from 'react-bootstrap';
 import NotFound from '../../NotFound/NotFound';
 import AddAProduct from '../AddAProduct/AddAProduct';
+import EditDetails from '../EditDetails/EditDetails';
 
 const drawerWidth = 230;
 
@@ -175,10 +176,13 @@ function Dashboard(props) {
             admin? 
             <Switch>
               <Route exact path={`${path}`}>
-                <ManageProducts></ManageProducts>
+                <ManageAllOrders></ManageAllOrders>
               </Route>
               <AdminRoute path={`${path}/manage-products`}>
                 <ManageProducts></ManageProducts>
+              </AdminRoute>
+              <AdminRoute path={`${path}/edit-details/:id`}>
+                <EditDetails></EditDetails>
               </AdminRoute>
               <AdminRoute path={`${path}/add-a-product`}>
                 <AddAProduct></AddAProduct>

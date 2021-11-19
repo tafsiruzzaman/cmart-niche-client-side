@@ -6,7 +6,6 @@ import RegistrationRoute from './PrivateRoutes/RegistrationRoute/RegistrationRou
 import SignIn from './pages/Registration/SignIn/SignIn';
 import GeneralRoute from './PrivateRoutes/GeneralRoute/GeneralRoute';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
-import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Explore from './pages/Explore/Explore';
 import NotFound from './pages/NotFound/NotFound';
@@ -23,9 +22,6 @@ function App() {
           </Route>
           <Route path="/home">
             <Home></Home>
-          </Route>
-          <Route path="/about">
-            <About></About>
           </Route>
           <Route path="/contact">
             <Contact></Contact>

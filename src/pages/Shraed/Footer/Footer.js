@@ -55,7 +55,7 @@ const Footer = () => {
                             <div className="col-md-6 text-center">
                                 <h3 className="fw-bolder mb-0 mt-3 mt-md-2">Support</h3>
                                 <div className="mt-3 mt-md-5">
-                                    <p><Link className="text-decoration-none text-white" to="/about">About Us</Link></p>
+                                    <p><Link className="text-decoration-none text-white" to="/home">Home</Link></p>
                                     <p><Link className="text-decoration-none text-white" to="/contact">Contact Us</Link></p>
                                     <p><Link className="text-decoration-none text-white" to="/explore">Explore</Link></p>
                                     <p><Link className="text-decoration-none text-white" to="/">Blogs</Link></p>

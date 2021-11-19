@@ -73,7 +73,7 @@ const OrderCar = () => {
                                     <div className="text-start">
                                         <small className="d-block">Excellent</small>
                                         <small className="d-block">Ratting: <i className="text-danger fas fa-star"></i> {car?.ratting}</small>
-                                        <small className="d-block">{car?.review} Review</small>
+                                        <small className="d-block">{car?.review} Reviews</small>
                                     </div>
                                 </div>
                                 <hr />

@@ -10,15 +10,15 @@ const MyOrders = () => {
     const {user} = useAuth();
     const [usersBookings, setUserBookings] = useState([]);
 
-    useEffect(() => {
+    useEffect( () => {
         fetch(`https://thawing-sea-96510.herokuapp.com/all-bookings/${user.email}`)
         .then(res => res.json())
         .then(data => setUserBookings(data))
-    }, []);
+    }, [])
 
     const handleDelete = id => {
         swal({
-            title: "Are you sure you want cancel this booking?",
+            title: "Are you sure you want to cancel this booking?",
             icon: "warning",
             buttons: true,
             dangerMode: true,
@@ -39,8 +39,6 @@ const MyOrders = () => {
                         });
                     }
                 });
-            } else {
-              swal("Your imaginary file is safe!");
             }
           });
     };
@@ -49,7 +47,7 @@ const MyOrders = () => {
         <div className="my-3 my-md-5">
             <h2 className="fw-bold mb-5">You have booked {usersBookings.length} car</h2>
             {
-                (usersBookings.length === 0) && <Link to="/"><Button variant="warning text-white rounded-0 my-5 px-5">Go back Home</Button></Link>
+                (usersBookings.length === 0) && <Link to="/"><Button variant="danger text-white rounded-0 my-5 px-5">Go back Home</Button></Link>
             }
             <div className="row gy-5 px-2">
                 {

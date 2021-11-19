@@ -40,7 +40,7 @@ const ManageAllOrders = () => {
     return (
         // http://localhost:5000/all-bookings
         <div className="container my-5">
-            <h3 className="text-center mb-3 header-text-colour">All Bookings</h3>
+            <h3 className="text-center mb-3 fw-bolder">All Bookings</h3>
             <div className="table-responsive">
             <table className="table table-striped table-bordered">
                 <thead>

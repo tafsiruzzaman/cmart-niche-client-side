@@ -2,7 +2,6 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 
 const SingleItem = (props) => {
-    console.log(props.singleItem)
     const {img, carName, colour, engineType,  price, status, _id} = props.singleItem;
     const {handleDelete} = props;
     return (
