@@ -6,7 +6,13 @@ It is a single page application made with ReactJS, React-bootstrap etc...
 
 - [Live Site Link](https://cmart-tj.web.app/)
 
-## Technologies
+## Project Overview:
+
+### 1. A responsive, fully-functional niche website.
+### 2. Customers can create accounts, browse products, book products, cancel bookings & write reviews.
+### 3. Admins have the ability to add new products, remove existing products, remove user products, update shipping status, and create new admin.
+
+## Main Technologies
 
 [![React Badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Firebase Badge](https://img.shields.io/badge/Firebase-FFCB2B?style=for-the-badge&logo=firebase&logoColor=white)](https://firebase.google.com/)
@@ -25,7 +31,3 @@ It is a single page application made with ReactJS, React-bootstrap etc...
 [![Instagram Badge](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/tafsiruzzamann/)
 [![Github Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tafsiruzzaman)
 [![Mail Badge](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tafsirjaman100@gamail.com)
-
-## Responsive?
-
-Yes. It is.......
